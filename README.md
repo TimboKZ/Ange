@@ -1,6 +1,6 @@
 # Ange
 
-Compile anything into anything (using [EJS(http://ejs.co/) templates]).
+Compile anything into anything using [EJS templates](http://ejs.co/).
 
 > This project is currently in development.
 
