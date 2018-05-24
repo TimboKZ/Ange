@@ -1,4 +1,8 @@
 <%# output: ./answer.txt -%>
 Ange example: File with custom output
 
-The square root of 2 is <%- Math.sqrt(2).toFixed(4) %>
+<%
+const dp = 5;
+const fixedSqrt = (x) => Math.sqrt(x).toFixed(dp);
+-%>
+The square root of 2 is <%- fixedSqrt(2) %> (to <%- dp %> decimal places).
