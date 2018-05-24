@@ -1,25 +1,24 @@
 # Ange
 
-Compile anything into anything (using [EJS](http://ejs.co/) templates).
+Compile anything into anything (using [EJS(http://ejs.co/) templates]).
 
 > This project is currently in development.
 
 # Philosophy
 
-There are times when you want to automate some part of documentation generation, but that part is either too specific or
-too small for tools like [apiDoc](http://apidocjs.com/) or [JSDoc](https://github.com/jsdoc3/jsdoc). Ange, on the other
-hand, does exactly that - it lets you insert small JavaScript snippets into any text file using the
+There are times when you want to automate some part of text (or documentation) generation, but that part is either too
+specific or too small to justify using tools like [apiDoc](http://apidocjs.com/) or [JSDoc](https://github.com/jsdoc3/jsdoc).
+Ange addresses this exact issue - it lets you insert small JavaScript snippets into any  text file using the
 [EJS templating engine](http://ejs.co/). These snippets will then be evaluated to print out the final result - letting
 you automatically generate content for text files.
 
 Ange doesn't stop at documentation - it works with any text file format. You can use it for anything you want - for
-example, you can use ANge to generate a config file for continuous integration (using Ange to print environment
+example, you can use Ange to generate a config file for continuous integration (using Ange to print environment
 variables into the config).
 
-Ange was meant to be very simple to use - it requires no documentation and uses
+Ange was meant to be very simple to use - it requires no configuration and uses
 [default EJS syntax](http://ejs.co/#docs), yet it is still a very powerful tool. That said, if you're working on a large
-project that requires complex compilation logic, you should probably go for a real documentation/static site
-generator.
+project that requires complex compilation logic, you should probably go for a real documentation/static site generator.
 
 # Usage
 
@@ -30,12 +29,11 @@ Ange. You can view help using the `ange help` command.
 # Install Ange globally
 npm install -g ange
 
-
 # Create a new folder
 mkdir ange-demo
 cd ange-demo
 
-# Create a template file for Ange to use
+# Create a template file for Ange
 echo 'Current date is <%- new Date().toLocaleDateString() %>.' > date.ange.txt
 
 # Compile the template - Ange will automatically discover it
@@ -52,15 +50,22 @@ any arguments will make it use the current directory. If you want Ange to scan f
 ### EJS templates
 
 The basic idea is that you first need to create a template file that has `.ange` in its name. For example:
-`my-page.ange.html`, `prod.ange.env`. `config.ange.ini`, etc. Inside this file, you can use [EJS](http://ejs.co/#docs) -
-that is, you can insert JavaScript snippets like so:
+`api-docs.ange.md`, `style.ange.css`, `config.ange.ini`, etc. Inside this file, you can use [EJS](http://ejs.co/#docs)
+- that is, you can insert JavaScript snippets directly into the text file, like so:
 
 ```
-<%- JSON.stringify({hello: 'world'}) %>
+... you should get this response: <%- JSON.stringify({operationStatus: 'success'}) %>.
+```
+
+Ange will compile the line from the above example into this:
+
+
+```
+... you should get this response: {"operationStatus":"success"}.
 ```
 
 Files with `.ange` in their names are recognised automatically. You can still compile files without `.ange` by targeting
-them directly wih `ange <input-file> <output-path>`.
+them directly: `ange my-file.txt my-output.txt`.
 
 As you can see below, EJS supports different types of tags/template strings. Make sure to check out the Examples section
 below and [EJS docs](http://ejs.co/#docs) to see what else is posisble.
