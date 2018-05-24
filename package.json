@@ -14,8 +14,10 @@
     "ange": "./bin/ange-cli.js"
   },
   "keywords": [
-    "mustache",
+    "ejs",
+    "generator",
     "compiler",
+    "automation",
     "docs",
     "ange"
   ],
