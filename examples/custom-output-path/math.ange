@@ -1,0 +1,4 @@
+<%# output: ./answer.txt -%>
+Ange example: File with custom output
+
+The square root of 2 is <%- Math.sqrt(2).toFixed(4) %>

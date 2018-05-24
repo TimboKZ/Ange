@@ -1,0 +1,3 @@
+Ange example: File with custom output
+
+The square root of 2 is 1.4142
