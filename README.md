@@ -49,15 +49,17 @@ any arguments will make it use the current directory. If you want Ange to scan f
 
 ### EJS templates
 
-The basic idea is that you first need to create a template file that has `.ange` in its name. For example:
-`api-docs.ange.md`, `style.ange.css`, `config.ange.ini`, etc. Inside this file, you can use [EJS](http://ejs.co/#docs)
-- that is, you can insert JavaScript snippets directly into the text file, like so:
+The basic idea is that you first need to create a template file that has
+`.ange` in its name. For example: `api-docs.ange.md`, `style.ange.css`,
+`config.ange.ini`, etc. You can use [EJS syntax](http://ejs.co/#docs) in this
+file. That is, you can insert JavaScript snippets directly into the file,
+like so:
 
 ```
 ... you should get this response: <%- JSON.stringify({operationStatus: 'success'}) %>.
 ```
 
-Ange will compile the line from the above example into this:
+Ange will compile the line from above into this:
 
 
 ```
@@ -106,7 +108,4 @@ to [create an issue](https://github.com/TimboKZ/Ange/issues) if you encounter a 
 # Examples
 
 Examples can be found in the `examples/` folder. You can run `ange -r` in that folder to rebuild all of the examples.
-
-
-
 
