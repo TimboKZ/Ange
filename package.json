@@ -1,6 +1,6 @@
 {
   "name": "ange",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compile anything into anything using Mustache.",
   "main": "index.js",
   "scripts": {
