@@ -18,7 +18,7 @@ const logger = winston.createLogger({
     format: winston.format.combine(
         winston.format.splat(),
         winston.format.colorize(),
-        winston.format.simple()
+        winston.format.simple(),
     ),
     transports: [new winston.transports.Console()],
 });
@@ -30,10 +30,15 @@ cli
     .argument('[input]', 'Input file or directory (supports glob expressions)', cli.STRING, process.cwd())
     .argument('[output]', 'Output file (if input is also a file)', cli.STRING)
     .option('-r, --recursive', 'Discover input files recursively (if input is a directory)', cli.BOOL, false)
-    .option('-w, --watch', 'Watch ', cli.BOOL, false)
+    .option('-w, --watch', 'Watch input files for changes', cli.BOOL, false)
     .action((args, options) => {
         Promise.resolve()
-            .then(() => ange.run({input: args.input, output: args.output, recursive: options.recursive}))
+            .then(() => ange.run({
+                input: args.input,
+                output: args.output,
+                recursive: options.recursive,
+                watch: options.watch,
+            }))
             .catch(error => {
                 if (error instanceof Util.AngeError) {
                     logger.error(error.message);

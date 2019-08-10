@@ -46,6 +46,9 @@ cat date.txt
 
 # You can also use Glob patterns:
 ange './**/*.ange.txt'
+
+# Add `-w` or `--watch` flag to watch files for changes
+ange './**/*.ange.txt' -w
 ```
 
 You can run `ange` on a single file (`ange my-file.txt`) or on a directory (`ange my-folder/`). Running `ange` without
