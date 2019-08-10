@@ -35,12 +35,17 @@ cd ange-demo
 
 # Create a template file for Ange
 echo 'Current date is <%- new Date().toLocaleDateString() %>.' > date.ange.txt
+# The command above will create the file `date.ange.txt`
 
 # Compile the template - Ange will automatically discover it
 ange
+# `date.ange.txt` -> `data.txt`
 
 # View the contents of the generated file
 cat date.txt
+
+# You can also use Glob patterns:
+ange './**/*.ange.txt'
 ```
 
 You can run `ange` on a single file (`ange my-file.txt`) or on a directory (`ange my-folder/`). Running `ange` without
