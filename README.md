@@ -75,7 +75,8 @@ Ange will compile the line from above into this:
 ```
 
 Files with `.ange` in their names are recognised automatically. You can still compile files without `.ange` by targeting
-them directly: `ange my-file.txt my-output.txt`.
+them directly: `ange my-file.txt my-output.txt`. You can use `require(...)`, `__dirname` and `__filename` inside your
+templates.
 
 As you can see below, EJS supports different types of tags/template strings. Make sure to check out the Examples section
 below and [EJS docs](http://ejs.co/#docs) to see what else is posisble.
