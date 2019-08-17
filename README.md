@@ -2,8 +2,6 @@
 
 Compile anything into anything using [EJS templates](http://ejs.co/).
 
-> This project is currently in development.
-
 # Philosophy
 
 There are times when you want to automate some part of text (or documentation) generation, but that part is either too
